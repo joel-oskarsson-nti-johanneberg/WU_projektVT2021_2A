@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 300px 10px 600px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "he"
+        "bo"
+        "ma"
+        "fo"
+        "fo2"
+}
+
+header{
+    grid-area: "he";
+
+}
+
+.index_he{
+    background-image: url("../img/logo_asphalt.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.border{
+    grid-area: "bo";
+    background-color: black;
+}
+
+main{
+    /*background-color: yellow;*/
+    grid-area: "ma";
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+    background-image: url("../img/highway.jpg");/*rotera när det blir fullskärm*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mobile_nav{
+    /*background-color:blue;*/  
+    /*width: 100%;*/
+    position: fixed;
+    /*height: 200px;
+    width: 100px;*/
+    left: 0px;
+    top: 50%;
+    /*margin top hälftene av height för att centrera*/
+    margin-top: -45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dekstop_nav{
+    visibility: hidden;
+}
+
+img{
+    height: 90vh;
+}
+section{
+    background-color: blue;
+    height: 100px;
+    width: 200px;
+}
+
+.middle_sec{
+    background-color: transparent;
+}
+footer{
+    background-color: black;
+    grid-area: "fo";
+}
+
+@media (orientation: landscape){
+    .container{
+        grid-template-rows: 300px 100px 800px 300px;
+    }
+
+    .border{
+        height: 100%;
+        background-color: yellow;
+    }
+
+    .mobile_nav{
+        visibility: hidden;
+    }
+
+    main{
+        background-image: url("../img/highway_rot.jpg");
+    }
+}
