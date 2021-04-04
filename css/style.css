@@ -3,103 +3,444 @@
     padding: 0;
     box-sizing: border-box;
     text-align: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+/*index-grid*/
 .container{
     display: grid;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    grid-template-rows: 300px 10px 600px 300px;
+    grid-template-rows: 300px 10px 1200px 100px;
     grid-template-columns: 1fr;
     grid-template-areas: 
         "he"
         "bo"
         "ma"
         "fo"
-        "fo2"
+    ;
 }
+
+.mobile_nav {
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #434446;
+    font-family: sans-serif;
+    border-radius: 40%;
+    z-index: 5;
+}
+
+.mobile_links {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 90px;
+    position: absolute;
+    right: 0px;
+    top: -90vh;
+    background-color: #434446;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 1s;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.nav-active {
+    transform: translateY(100vh);
+}
+
+.mobile_links li {
+    list-style: none;
+}
+
+.mobile_links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mobile_button div {
+    background-color: white;
+    height: 6px;
+    width: 50px;
+    margin: 10px;
+    border-radius: 10%;
+    transition: all 0.3s;
+}
+
+.mobile_button {
+    margin-right: 10px;
+}
+
+.mobile_button:hover {
+    cursor: pointer;
+}
+
+.toggle .line-1 {
+    transform: rotate(-45deg) translate(-10px, 12px);
+}
+
+.toggle .line-2 {
+    opacity: 0;
+}
+
+.toggle .line-3 {
+    transform: rotate(45deg) translate(-10px, -12px);
+}
+
+/*design*/
 
 header{
-    grid-area: "he";
-
-}
-
-.index_he{
-    background-image: url("../img/logo_asphalt.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    grid-area: he;
+    background-color: #5f6165;
 }
 
 .border{
-    grid-area: "bo";
-    background-color: black;
+    grid-area: bo;
+    height: 10px;
+    background-color: #5f6165;
+}
+
+.border a{
+    color: #5f6165;
 }
 
 main{
-    /*background-color: yellow;*/
-    grid-area: "ma";
+    grid-area: ma;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-content: space-between;
-    background-image: url("../img/highway.jpg");/*rotera när det blir fullskärm*/
+    background-image: url("../img/highway.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.mobile_nav{
-    /*background-color:blue;*/  
-    /*width: 100%;*/
-    position: fixed;
-    /*height: 200px;
-    width: 100px;*/
-    left: 0px;
-    top: 50%;
-    /*margin top hälftene av height för att centrera*/
-    margin-top: -45vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.dekstop_nav{
-    visibility: hidden;
-}
-
-img{
-    height: 90vh;
-}
-section{
-    background-color: blue;
-    height: 100px;
-    width: 200px;
 }
 
 .middle_sec{
     background-color: transparent;
 }
+
 footer{
-    background-color: black;
-    grid-area: "fo";
+    grid-area: fo;
+    background-color: #5f6165;
+}
+
+.bu_header{
+    grid-area: he;
+    background-color: #5f6165;
+    background-image: url("../img/logo_asphalt.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+.border_butik a{
+    color: white;
+}
+
+.butik_main{
+    grid-area: ma;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background-image: url("../img/highway.jpg");/*rotera när det blir fullskärm*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+.produkter{
+    height: 170px;
+    width: 400px;
+    margin: 5px;
+    background-color: #5f6165;
+    position: relative;
+}
+
+.tjänster{
+    position: relative;
+    height: 170px;
+    width: 400px;
+    margin: 5px;
+    background-color: #5f6165;
+    justify-content: center;
+}
+
+.tjänster p{
+    position: relative;
+    top: 10%;
+}
+
+.produktbild{
+    position: absolute;
+    height: 75px;
+    top: 30%;
+    left: 5%;
+}
+
+.produkter p{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.recensioner{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input{
+    text-align: left;
+    color: black;
+    border-color: black;
+    height: 250px;
+    width: 250px;
+}
+
+.send{
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.map{
+    margin-top: 5%;
+    height: 60%;
+}
+
+.visible1{
+    height: 400px;
+    width: 400px;
+    background-color: #5f6165;
+}
+
+.visible2{
+    height: 200px;
+    width: 400px;
+    background-color: #5f6165;
+}
+
+.middle_sec{
+    background-color: transparent;
+}
+
+.mail{
+    height: 350px;
+    width: 300px;
+    background-color: #5f6165;
+}
+
+.position{
+    height: 400px;
+    width: 300px;
+    background-color:#5f6165;
+}
+
+.map{
+    width: 70%;
+    height: 70%;
+}
+
+.ab_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.about_se{
+    background-color: #5f6165;
+    width: 300px;
+    height: 200px;
+}
+
+.kontakt_main{
+    grid-area: ma;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.buy{
+    height: 20px;
+    width: 60px;
+    background: lightgray;
+    color:black;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    border: 2px black solid;
+}
+
+.buy_service{
+    height: 20px;
+    width: 60px;
+    background: lightgray;
+    color:black;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    border: 2px black solid;
+}
+
+.border nav ul li a{
+    font-size: 30px;
+}
+
+.index_logga{
+    position: relative;
+    width: 500px;
+    top: -10%;
 }
 
 @media (orientation: landscape){
-    .container{
-        grid-template-rows: 300px 100px 800px 300px;
+
+    .index_logga{
+        width: 800px;
+        top: -35%;
     }
 
-    .border{
-        height: 100%;
-        background-color: yellow;
+    .border_butik{
+        height: 100px;
+        grid-area: bo;
+        background-color: #5f6165;
+    }
+
+    .border_butik ul{
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        background-color: #5f6165;
     }
 
     .mobile_nav{
         visibility: hidden;
     }
 
-    main{
-        background-image: url("../img/highway_rot.jpg");
+    .border ul{
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        background-color: #5f6165;
+    }
+    .border a{
+        color: white;
+    }
+    .border li{
+        position: relative;
+        top: 30%;
+    }
+
+    .mobile_nav{
+        visibility: hidden;
+    }
+
+    /*butik och tjänster*/
+    .container{
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-rows: 300px 100px 600px 100px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "he"
+            "bo"
+            "ma"
+            "fo"
+    }
+
+    /*tjänster*/
+    .tjänster{
+        height: 200px;
+        width: 380px;
+        margin: 20px;
+        background-color: #5f6165;
+    }
+
+
+    /*om oss*/
+    .ab_main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .about_se{
+        background-color: #5f6165;
+        width: 250px;
+        height: 250px;
+    }
+
+    /*kontakt*/
+    .kontakt_main{
+        grid-area: ma;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .mail{
+        height: 300px;
+        width: 430px;
+        background-color: #5f6165;
+    }
+
+    .position{
+        height: 300px;
+        width: 400px;
+ 
+        background-color:#5f6165;
+    }
+    
+    .visible1{
+        height: 200px;
+        width: 800px;
+        background-color: #5f6165;
+    }
+
+    .visible2{
+        height: 150px;
+        width: 800px;
+        background-color: #5f6165;
+    }
+
+    .middle_sec{
+        background-color: transparent;
+    }
+
+    .produkter{
+        height: 250px;
+        width: 380px;
+        margin: 10px;
+        background-color: #5f6165;
+    }
+    
+    .input{
+        width: 350px;
     }
 }
