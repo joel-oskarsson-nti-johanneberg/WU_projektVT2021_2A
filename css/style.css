@@ -12,7 +12,7 @@
     display: grid;
     width: 100%;
     height: 100vh;
-    grid-template-rows: 300px 10px 1200px 100px;
+    grid-template-rows: 300px 10px 1250px 100px;
     grid-template-columns: 1fr;
     grid-template-areas: 
         "he"
@@ -26,8 +26,8 @@
     position:fixed;
     top: 0px;
     right: 0px;
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     height: 90vh;
-    width: 90px;
+    width: 110px;
     position: absolute;
     right: 0px;
     top: -90vh;
@@ -79,7 +79,7 @@
 }
 
 .mobile_button {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .mobile_button:hover {
@@ -129,13 +129,16 @@ main{
     background-size: cover;
 }
 
-.middle_sec{
-    background-color: transparent;
-}
 
 footer{
     grid-area: fo;
     background-color: #5f6165;
+}
+
+footer h3{
+    margin-top: 1%;
+    margin-left: -80%;
+    letter-spacing: 2px;
 }
 
 .bu_header{
@@ -157,7 +160,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    height: 100%;
+    height: 1250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -171,11 +174,55 @@ footer{
 }
 
 .produkter{
+    display: grid;
     height: 170px;
     width: 400px;
     margin: 5px;
     background-color: #5f6165;
     position: relative;
+    grid-template-rows: 50px 100px 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "heb heb"
+        "bil tex"
+        "lo lo" 
+    ;
+    border-radius: 10px;
+    border: 1px white solid;
+}
+
+.produkter h2{
+    grid-area: heb;
+    align-self: center;
+    justify-self: center;
+}
+
+.produktbild{
+    grid-area: bil;
+    height: 75px;
+    align-self: center;
+    justify-self: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.produkter p{
+    grid-area: tex;
+    width: 200px;
+    align-self: center;
+    justify-self: center;
+}
+
+.buy{
+    height: 20px;
+    width: 60px;
+    background: lightgray;
+    color:black;
+    position: absolute;
+    border: 2px black solid;
+    grid-area: lo;
+    align-self: center;
+    justify-self: center;
 }
 
 .tjänster{
@@ -192,23 +239,11 @@ footer{
     top: 10%;
 }
 
-.produktbild{
-    position: absolute;
-    height: 75px;
-    top: 30%;
-    left: 5%;
-}
-
-.produkter p{
-    position: absolute;
-    top: 20%;
-    left: 40%;
-}
-
 .recensioner{
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
+    border: none;
 }
 
 .input{
@@ -228,12 +263,30 @@ footer{
 .map{
     margin-top: 5%;
     height: 60%;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 .visible1{
-    height: 400px;
-    width: 400px;
+    height: 1000px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: none;
+    position: relative;
+    left: 0%;
+    top:0%;
+}
+
+.visible1 section{
+    width: 250px;
+    height: 300px;
     background-color: #5f6165;
+}
+
+.visible1 section p{
+    margin-top: 5%;
 }
 
 .visible2{
@@ -243,7 +296,8 @@ footer{
 }
 
 .middle_sec{
-    background-color: transparent;
+    background-color: gray;
+    border: none;
 }
 
 .mail{
@@ -269,28 +323,11 @@ footer{
     justify-content: space-evenly;
 }
 
-.about_se{
-    background-color: #5f6165;
-    width: 300px;
-    height: 200px;
-}
-
 .kontakt_main{
     grid-area: ma;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-.buy{
-    height: 20px;
-    width: 60px;
-    background: lightgray;
-    color:black;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    border: 2px black solid;
 }
 
 .buy_service{
@@ -314,7 +351,77 @@ footer{
     top: -10%;
 }
 
+.visible1 img{
+    width: 85%;
+    height: 55%;
+    margin-top: 3%;
+    border: 2px lightgray solid;
+    border-radius: 5px;
+}
+
+.visible1 h2{
+    font-size: 20px;
+}
+
+.about_se{
+    background-color: #5f6165;
+    width: 400px;
+    height: 300px;
+}
+
+.about_se:nth-child(odd) p{
+    font-size: 18px;
+    width: 200px;
+    text-align: left;
+    margin: 10px;
+}
+
+.about_se:nth-child(even) p{
+    font-size: 18px;
+    width: 200px;
+    text-align: left;
+    float: right;
+    margin: 10px;
+}
+
+.about_se:nth-child(odd) img{
+    width: 42%;
+    height: 65%;
+    position: relative;
+    top: -250px;
+    left: 25%;
+    border: 2px lightgray solid;
+    border-radius: 5px;
+}
+
+.about_se:nth-child(even) img{
+    width: 42%;
+    height: 65%;
+    position: relative;
+    top: 20px;
+    border: 2px lightgray solid;
+    border-radius: 5px;
+}
+
+section{
+    border: 1px white solid;
+    border-radius: 10px;
+}
+
 @media (orientation: landscape){
+
+    .container{
+        display: grid;
+        width: 100%;
+        height: 100vh;
+        grid-template-rows: 300px 100px 700px 100px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "he"
+            "bo"
+            "ma"
+            "fo"
+    }
 
     .index_logga{
         width: 800px;
@@ -361,18 +468,6 @@ footer{
     }
 
     /*butik och tjänster*/
-    .container{
-        display: grid;
-        width: 100vw;
-        height: 100vh;
-        grid-template-rows: 300px 100px 600px 100px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "he"
-            "bo"
-            "ma"
-            "fo"
-    }
 
     /*tjänster*/
     .tjänster{
@@ -386,14 +481,8 @@ footer{
     /*om oss*/
     .ab_main{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
-    }
-
-    .about_se{
-        background-color: #5f6165;
-        width: 250px;
-        height: 250px;
     }
 
     /*kontakt*/
@@ -420,7 +509,8 @@ footer{
     .visible1{
         height: 200px;
         width: 800px;
-        background-color: #5f6165;
+        flex-direction: row;
+        margin-left: 0px;
     }
 
     .visible2{
@@ -431,16 +521,67 @@ footer{
 
     .middle_sec{
         background-color: transparent;
+        border: none;
     }
 
     .produkter{
         height: 250px;
         width: 380px;
-        margin: 10px;
-        background-color: #5f6165;
+        /*margin: 10px;
+        background-color: #5f6165;*/
     }
     
     .input{
         width: 350px;
+    }
+
+    section{
+        border: 1px white solid;
+        border-radius: 10px;
+    }
+
+    .about_se{
+        background-color: #5f6165;
+        width: 800px;
+        height: 200px;
+    }
+
+    .about_se:nth-child(odd) p{
+        font-size: 15px;
+        width: 380px;
+        text-align: left;
+        margin: 10px;
+    }
+
+    .about_se:nth-child(even) p{
+        font-size: 15px;
+        width: 380px;
+        text-align: left;
+        float: right;
+        margin: 10px;
+    }
+
+    .about_se:nth-child(odd) img{
+        width: 42%;
+        height: 65%;
+        position:relative;
+        top: -52%;
+        left: 25%;
+        border: 2px lightgray solid;
+        border-radius: 5px;
+    }
+
+    .about_se:nth-child(even) img{
+        width: 42%;
+        height: 65%;
+        position: relative;
+        top: 5%;
+        border: 2px lightgray solid;
+        border-radius: 5px;
+    }
+
+    .butik_main{
+        height: 100%;
+        flex-direction: row;
     }
 }
